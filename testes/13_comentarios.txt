@@ -1,0 +1,6 @@
+// declara duas variaveis
+let x = 5 + 3; // x deve ser 8
+let y = 10 / 2; // y deve ser 5
+print(x); // imprime 8
+print(y); // imprime 5
+// fim do programa

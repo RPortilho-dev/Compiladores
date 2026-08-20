@@ -1,3 +1,15 @@
+# Mini C Compiler — Atividade Individual (Análise + Melhoria)
+
+> **Este repositório é uma atividade individual da disciplina de Compiladores.**
+> O projeto original é do autor [ironrinox](https://github.com/ironrinox/mini-c-compiler) (licença MIT, mantida em `LICENSE`).
+> Meu trabalho aqui foi analisar a arquitetura, executar uma bateria de testes (léxicos, sintáticos e semânticos) e implementar uma melhoria individual — **suporte a comentários de uma linha (`//`)** no lexer.
+>
+> - 📄 Relatório completo da análise: [`RELATORIO.md`](./RELATORIO.md)
+> - 🧪 Casos de teste usados: pasta [`testes/`](./testes)
+> - 🔧 Melhoria implementada: comentários de linha (`//`) em `src/lexer.c`
+
+---
+
 # Mini C Compiler
 
 ## Overview
@@ -17,6 +29,7 @@ This repository is designed so that each part is **understandable and modular**,
 This project is **currently under development**. While the interpreter is fully functional for simple expressions and variable assignments, many features are still planned, including:
 - More complex statements, loops, and advanced error handling.
 - Future compilation phases like code generation, optimization, and assembly output.
+
 
 ![status](https://img.shields.io/badge/status-in%20progress-yellow)
 

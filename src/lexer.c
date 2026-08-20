@@ -38,6 +38,15 @@ TokenList lex(const char* source) {
             continue;
         }
 
+        // Skip single-line comments: "// ... " until newline or end of file
+        if (c == '/' && source[i + 1] == '/') {
+            i += 2; // skip the two '/' characters
+            while (source[i] != '\0' && source[i] != '\n') {
+                i++;
+            }
+            continue; // do not create a token for the comment
+        }
+
         // Numbers
         if (isdigit(c)) {
             int value = 0; // value will contain the complete integer once the entire numeric token has been read
