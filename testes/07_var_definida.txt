@@ -1,2 +1,0 @@
-let idade = 30;
-print(idade);

@@ -1,0 +1,184 @@
+===== testes/01_palavras_reservadas.mc =====
+1:1  | PALAVRA_RESERVADA | int
+1:5  | PALAVRA_RESERVADA | float
+1:11 | PALAVRA_RESERVADA | char
+1:16 | PALAVRA_RESERVADA | if
+1:19 | PALAVRA_RESERVADA | else
+1:24 | PALAVRA_RESERVADA | while
+1:30 | PALAVRA_RESERVADA | return
+1:37 | PALAVRA_RESERVADA | print
+
+Total de tokens: 8
+Total de erros lexicos: 0
+
+===== testes/02_identificadores_validos.mc =====
+1:1  | IDENTIFICADOR     | idade
+2:1  | IDENTIFICADOR     | _media
+3:1  | IDENTIFICADOR     | aluno2
+4:1  | IDENTIFICADOR     | valor_total
+
+Total de tokens: 4
+Total de erros lexicos: 0
+
+===== testes/03_identificador_muito_longo.mc =====
+ERRO_LEXICO | linha 1, coluna 1 | identificador 'identificador_extremamente_longo_que_ultrapassa_o_limite_de_31_...' excede 31 caracteres (73 lidos)
+
+Total de tokens: 0
+Total de erros lexicos: 1
+
+===== testes/04_numeros_inteiros.mc =====
+1:1  | NUMERO_INTEIRO    | 0
+2:1  | NUMERO_INTEIRO    | 15
+3:1  | NUMERO_INTEIRO    | 2026
+
+Total de tokens: 3
+Total de erros lexicos: 0
+
+===== testes/05_numeros_reais.mc =====
+1:1  | NUMERO_REAL       | 1.5
+2:1  | NUMERO_REAL       | 0.25
+3:1  | NUMERO_REAL       | 100.0
+
+Total de tokens: 3
+Total de erros lexicos: 0
+
+===== testes/06_numeros_reais_malformados.mc =====
+ERRO_LEXICO | linha 1, coluna 1 | numero malformado: 12.
+ERRO_LEXICO | linha 2, coluna 1 | numero malformado: 1.2.3
+
+Total de tokens: 0
+Total de erros lexicos: 2
+
+===== testes/07_operadores.mc =====
+1:1  | OPERADOR          | +
+1:3  | OPERADOR          | -
+1:5  | OPERADOR          | *
+1:7  | OPERADOR          | /
+1:9  | OPERADOR          | %
+1:11 | OPERADOR          | =
+1:13 | OPERADOR          | ==
+1:16 | OPERADOR          | !=
+1:19 | OPERADOR          | <=
+1:22 | OPERADOR          | >=
+1:25 | OPERADOR          | &&
+1:28 | OPERADOR          | ||
+
+Total de tokens: 12
+Total de erros lexicos: 0
+
+===== testes/08_delimitadores.mc =====
+1:1  | DELIMITADOR       | (
+1:3  | DELIMITADOR       | )
+1:5  | DELIMITADOR       | {
+1:7  | DELIMITADOR       | }
+1:9  | DELIMITADOR       | [
+1:11 | DELIMITADOR       | ]
+1:13 | DELIMITADOR       | ;
+1:15 | DELIMITADOR       | ,
+
+Total de tokens: 8
+Total de erros lexicos: 0
+
+===== testes/09_comentarios.mc =====
+1:1  | PALAVRA_RESERVADA | int
+1:5  | IDENTIFICADOR     | idade
+1:10 | DELIMITADOR       | ;
+3:1  | PALAVRA_RESERVADA | float
+3:7  | IDENTIFICADOR     | x
+3:9  | OPERADOR          | =
+3:11 | NUMERO_REAL       | 1.0
+3:14 | DELIMITADOR       | ;
+
+Total de tokens: 8
+Total de erros lexicos: 0
+
+===== testes/10_literais_caractere.mc =====
+1:1  | LITERAL_CARACTERE | 'a'
+2:1  | LITERAL_CARACTERE | '7'
+3:1  | LITERAL_CARACTERE | '+'
+ERRO_LEXICO | linha 4, coluna 1 | literal de caractere vazio: ''
+ERRO_LEXICO | linha 5, coluna 1 | literal de caractere com mais de um caractere: 'ab'
+ERRO_LEXICO | linha 6, coluna 1 | literal de caractere nao terminado: 'x
+
+Total de tokens: 3
+Total de erros lexicos: 3
+
+===== testes/11_caracteres_invalidos.mc =====
+1:1  | PALAVRA_RESERVADA | int
+1:5  | IDENTIFICADOR     | x
+1:7  | OPERADOR          | =
+1:9  | NUMERO_INTEIRO    | 10
+ERRO_LEXICO | linha 1, coluna 12 | simbolo invalido: @
+1:14 | NUMERO_INTEIRO    | 2
+1:15 | DELIMITADOR       | ;
+2:1  | PALAVRA_RESERVADA | int
+2:5  | IDENTIFICADOR     | y
+2:7  | OPERADOR          | =
+2:9  | NUMERO_INTEIRO    | 5
+ERRO_LEXICO | linha 2, coluna 11 | simbolo invalido: #
+2:13 | NUMERO_INTEIRO    | 3
+2:14 | DELIMITADOR       | ;
+
+Total de tokens: 12
+Total de erros lexicos: 2
+
+===== testes/12_arquivo_vazio.mc =====
+
+Total de tokens: 0
+Total de erros lexicos: 0
+
+===== testes/13_so_espacos_e_comentarios.mc =====
+
+Total de tokens: 0
+Total de erros lexicos: 0
+
+===== testes/14_sem_espacos.mc =====
+1:1  | PALAVRA_RESERVADA | if
+1:3  | DELIMITADOR       | (
+1:4  | IDENTIFICADOR     | x
+1:5  | OPERADOR          | >=
+1:7  | NUMERO_INTEIRO    | 10
+1:9  | DELIMITADOR       | )
+1:10 | DELIMITADOR       | {
+1:11 | IDENTIFICADOR     | x
+1:12 | OPERADOR          | =
+1:13 | IDENTIFICADOR     | x
+1:14 | OPERADOR          | +
+1:15 | NUMERO_INTEIRO    | 1
+1:16 | DELIMITADOR       | ;
+1:17 | DELIMITADOR       | }
+
+Total de tokens: 14
+Total de erros lexicos: 0
+
+===== testes/exemplo.mc =====
+1:1  | PALAVRA_RESERVADA | int
+1:5  | IDENTIFICADOR     | idade
+1:11 | OPERADOR          | =
+1:13 | NUMERO_INTEIRO    | 18
+1:15 | DELIMITADOR       | ;
+2:1  | PALAVRA_RESERVADA | float
+2:7  | IDENTIFICADOR     | media
+2:13 | OPERADOR          | =
+2:15 | NUMERO_REAL       | 8.5
+2:18 | DELIMITADOR       | ;
+5:1  | PALAVRA_RESERVADA | if
+5:4  | DELIMITADOR       | (
+5:5  | IDENTIFICADOR     | media
+5:11 | OPERADOR          | >=
+5:14 | NUMERO_REAL       | 7.0
+5:17 | DELIMITADOR       | )
+5:19 | DELIMITADOR       | {
+6:5  | PALAVRA_RESERVADA | print
+6:10 | DELIMITADOR       | (
+6:11 | IDENTIFICADOR     | media
+6:16 | DELIMITADOR       | )
+6:17 | DELIMITADOR       | ;
+7:1  | DELIMITADOR       | }
+9:1  | PALAVRA_RESERVADA | return
+9:8  | NUMERO_INTEIRO    | 0
+9:9  | DELIMITADOR       | ;
+
+Total de tokens: 26
+Total de erros lexicos: 0
+
